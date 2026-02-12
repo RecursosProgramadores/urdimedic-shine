@@ -1,43 +1,34 @@
-import { Calendar, Users, Award, Camera } from "lucide-react";
+import { Calendar, Users, Award } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import fotoFamilia from "@/assets/familia/familia-completa.jpg";
+import fotoFundadores from "@/assets/familia/fundadores.jpg";
+import fotoConsultorio from "@/assets/consultorio/consultorio.jpg";
 
-// ============================================
-// 📸 INSTRUCCIONES PARA AGREGAR FOTOS:
-// ============================================
-// 1. Sube las fotos a la carpeta src/assets/familia/
-// 2. Importa las fotos aquí:
-//    import fotoFamilia from "@/assets/familia/familia-completa.jpg";
-//    import fotoFundadores from "@/assets/familia/fundadores.jpg";
-//    import fotoConsultorio from "@/assets/consultorio/consultorio.jpg";
-// 3. Reemplaza los placeholders con las imágenes importadas
-// ============================================
-
-// Placeholder images - Reemplaza con tus fotos importadas
 const galleryImages = [
   {
     id: 1,
-    src: null, // Reemplaza con: fotoFamilia
+    src: fotoFamilia,
     alt: "Familia Urbina Díaz",
     caption: "La familia Urbina Díaz continúa el legado",
-    placeholder: "Foto Familia",
   },
   {
     id: 2,
-    src: null, // Reemplaza con: fotoFundadores
+    src: fotoFundadores,
     alt: "Fundadores Óptica Díaz",
     caption: "Hermelinda y Marco Antonio - Fundadores",
-    placeholder: "Foto Fundadores",
   },
   {
     id: 3,
-    src: null, // Reemplaza con: fotoConsultorio
+    src: fotoConsultorio,
     alt: "Consultorio URDIMEDIC",
     caption: "Nuestras modernas instalaciones",
-    placeholder: "Foto Consultorio",
   },
 ];
 
 const HistorySection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   const milestones = [
     { year: "1998", event: "Fundación de Óptica Díaz" },
     { year: "2010", event: "Expansión de servicios oftalmológicos" },
@@ -46,9 +37,9 @@ const HistorySection = () => {
 
   return (
     <section id="historia" className="py-20 sm:py-28 bg-muted/30">
-      <div className="section-container">
+      <div className="section-container" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             Nuestra Historia
           </span>
@@ -60,28 +51,20 @@ const HistorySection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Text Content */}
-          <div>
+          <div className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Fundado el{" "}
-              <span className="text-primary font-semibold">
-                21 de mayo de 1998
-              </span>{" "}
+              <span className="text-primary font-semibold">21 de mayo de 1998</span>{" "}
               en Lambayeque por{" "}
-              <span className="font-medium text-foreground">
-                Hermelinda Díaz Herencia
-              </span>{" "}
+              <span className="font-medium text-foreground">Hermelinda Díaz Herencia</span>{" "}
               y{" "}
-              <span className="font-medium text-foreground">
-                Marco Antonio Urbina Santamaría
-              </span>{" "}
+              <span className="font-medium text-foreground">Marco Antonio Urbina Santamaría</span>{" "}
               como Óptica Díaz.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
               Hoy, sus hijos{" "}
-              <span className="font-medium text-foreground">
-                Marco, Kevin y Paola Urbina Díaz
-              </span>{" "}
+              <span className="font-medium text-foreground">Marco, Kevin y Paola Urbina Díaz</span>{" "}
               unifican el legado bajo{" "}
               <span className="text-primary font-semibold">URDIMEDIC</span>,
               combinando experiencia, tecnología moderna y calidez humana.
@@ -92,14 +75,10 @@ const HistorySection = () => {
               {milestones.map((milestone, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold">
-                      {milestone.year}
-                    </span>
+                    <span className="text-primary font-bold">{milestone.year}</span>
                   </div>
                   <div className="h-px flex-1 bg-border" />
-                  <span className="text-sm font-medium text-muted-foreground">
-                    {milestone.event}
-                  </span>
+                  <span className="text-sm font-medium text-muted-foreground">{milestone.event}</span>
                 </div>
               ))}
             </div>
@@ -125,62 +104,34 @@ const HistorySection = () => {
           </div>
 
           {/* Photo Gallery */}
-          <div className="space-y-4">
+          <div className={`space-y-4 transition-all duration-700 delay-400 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             {/* Main Photo */}
             <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
               <AspectRatio ratio={16 / 10}>
-                {galleryImages[0].src ? (
-                  <img
-                    src={galleryImages[0].src}
-                    alt={galleryImages[0].alt}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex flex-col items-center justify-center">
-                    <Camera className="w-12 h-12 text-primary/40 mb-3" />
-                    <span className="text-sm font-medium text-muted-foreground">
-                      {galleryImages[0].placeholder}
-                    </span>
-                    <span className="text-xs text-muted-foreground/70 mt-1">
-                      Sube a: src/assets/familia/
-                    </span>
-                  </div>
-                )}
+                <img
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
+                  className="w-full h-full object-cover"
+                />
               </AspectRatio>
               <div className="p-3 bg-card">
-                <p className="text-sm text-center text-muted-foreground">
-                  {galleryImages[0].caption}
-                </p>
+                <p className="text-sm text-center text-muted-foreground">{galleryImages[0].caption}</p>
               </div>
             </div>
 
             {/* Secondary Photos */}
             <div className="grid grid-cols-2 gap-4">
               {galleryImages.slice(1).map((image) => (
-                <div
-                  key={image.id}
-                  className="rounded-xl overflow-hidden border border-border shadow-md"
-                >
+                <div key={image.id} className="rounded-xl overflow-hidden border border-border shadow-md group">
                   <AspectRatio ratio={4 / 3}>
-                    {image.src ? (
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50 flex flex-col items-center justify-center">
-                        <Camera className="w-8 h-8 text-muted-foreground/40 mb-2" />
-                        <span className="text-xs font-medium text-muted-foreground">
-                          {image.placeholder}
-                        </span>
-                      </div>
-                    )}
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </AspectRatio>
                   <div className="p-2 bg-card">
-                    <p className="text-xs text-center text-muted-foreground">
-                      {image.caption}
-                    </p>
+                    <p className="text-xs text-center text-muted-foreground">{image.caption}</p>
                   </div>
                 </div>
               ))}

@@ -1,4 +1,5 @@
 import { Eye, Scissors, ScanEye, Glasses, Stethoscope, SmilePlus } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import oftalmologiaImg from "@/assets/services/oftalmologia-general.jpg";
 import cirugiaImg from "@/assets/services/cirugia-ocular.jpg";
 import examenesImg from "@/assets/services/examenes-complementarios.jpg";
@@ -7,6 +8,7 @@ import medicinaImg from "@/assets/services/medicina-interna.jpg";
 import odontologiaImg from "@/assets/services/odontologia.jpg";
 
 const ServicesSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
   const services = [
     {
       icon: Eye,
@@ -48,9 +50,9 @@ const ServicesSection = () => {
 
   return (
     <section id="servicios" className="py-20 sm:py-28 bg-background">
-      <div className="section-container">
+      <div className="section-container" ref={ref}>
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="section-title">¿Qué ofrecemos?</h2>
           <p className="section-subtitle mx-auto">
             Servicios oftalmológicos especializados con la mejor tecnología y atención personalizada
@@ -62,7 +64,8 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card rounded-2xl overflow-hidden shadow-sm border border-border card-hover"
+              className={`group bg-card rounded-2xl overflow-hidden shadow-sm border border-border card-hover transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: isVisible ? `${200 + index * 100}ms` : "0ms" }}
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">

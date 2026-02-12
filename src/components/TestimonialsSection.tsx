@@ -1,6 +1,7 @@
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Importa las fotos de pacientes desde la carpeta assets/testimonials
 // Ejemplo: import paciente1 from "@/assets/testimonials/paciente1.jpg";
@@ -68,11 +69,13 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 const TestimonialsSection = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="testimonios" className="py-20 sm:py-28 bg-background">
-      <div className="section-container">
+      <div className="section-container" ref={ref}>
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             Testimonios
           </span>
@@ -90,8 +93,8 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={testimonial.id}
-              className="card-hover border-border/50 bg-card relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`card-hover border-border/50 bg-card relative overflow-hidden transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{ transitionDelay: isVisible ? `${200 + index * 150}ms` : "0ms" }}
             >
               <CardContent className="p-6 sm:p-8">
                 {/* Quote Icon */}
@@ -137,7 +140,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           {[
             { value: "10,000+", label: "Pacientes atendidos" },
             { value: "25+", label: "Años de experiencia" },
