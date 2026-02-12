@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Clock } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,13 +21,29 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
+    <>
+      {/* Top bar with schedule */}
+      <div className={`hidden md:block bg-primary text-primary-foreground text-xs transition-all duration-300 ${isScrolled ? "h-0 overflow-hidden py-0" : "py-1.5"}`}>
+        <div className="section-container flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5" />
+              Lun – Vie: 9:00 AM – 1:00 PM / 4:00 PM – 7:00 PM | Sáb: 9:00 AM – 1:00 PM
+            </span>
+          </div>
+          <span className="flex items-center gap-1.5">
+            <Phone className="w-3.5 h-3.5" />
+            +51 934 401 465
+          </span>
+        </div>
+      </div>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
+            : "bg-transparent py-5 md:top-[34px]"
+        }`}
+      >
       <div className="section-container">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -102,7 +118,8 @@ const Header = () => {
           </nav>
         )}
       </div>
-    </header>
+      </header>
+    </>
   );
 };
 

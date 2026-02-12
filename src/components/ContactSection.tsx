@@ -78,6 +78,12 @@ const ContactSection = () => {
       value: "urdimedic@gmail.com",
       href: "mailto:urdimedic@gmail.com",
     },
+    {
+      icon: Clock,
+      label: "Horarios de atención",
+      value: "Lun – Vie: 9:00 AM – 1:00 PM / 4:00 PM – 7:00 PM",
+      subvalue: "Sáb: 9:00 AM – 1:00 PM | Dom: Cerrado",
+    },
   ];
 
   return (
