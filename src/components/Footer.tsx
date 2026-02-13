@@ -1,5 +1,7 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 
+import logoFooter from "../assets/logofooter.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -16,16 +18,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">U</span>
-              </div>
-              <div>
-                <span className="font-bold text-xl text-background">URDIMEDIC</span>
-              </div>
+            <div className="mb-6">
+              <img src={logoFooter} alt="URDIMEDIC" className="h-14 w-auto mb-4" />
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
-              Comprometidos con tu salud visual. Más de 25 años brindando atención 
+              Comprometidos con tu salud visual. Más de 25 años brindando atención
               oftalmológica de calidad en Lambayeque.
             </p>
           </div>

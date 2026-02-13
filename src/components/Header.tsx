@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Clock } from "lucide-react";
 
+import logoUr from "../assets/logour.png";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -38,69 +40,29 @@ const Header = () => {
         </div>
       </div>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
             ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
             : "bg-transparent py-5 md:top-[34px]"
-        }`}
+          }`}
       >
-      <div className="section-container">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">U</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-primary tracking-tight">URDIMEDIC</span>
-                <span className="text-[10px] text-muted-foreground -mt-1">comprometidos con tu salud</span>
-              </div>
-            </div>
-          </a>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
-            <a
-              href="https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-cta-secondary text-sm"
-            >
-              <Phone className="w-4 h-4" />
-              WhatsApp
+        <div className="section-container">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <a href="#inicio" className="flex items-center transition-transform hover:scale-105 duration-300">
+              <img
+                src={logoUr}
+                alt="URDIMEDIC"
+                className={`transition-all duration-300 ${isScrolled ? "h-10" : "h-12 md:h-16"}`}
+              />
             </a>
-          </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -109,15 +71,50 @@ const Header = () => {
                 href="https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-cta w-full text-center mt-2"
+                className="btn-cta-secondary text-sm"
               >
-                <Phone className="w-5 h-5" />
-                Agenda tu cita
+                <Phone className="w-4 h-4" />
+                WhatsApp
               </a>
-            </div>
-          </nav>
-        )}
-      </div>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in">
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <a
+                  href="https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta w-full text-center mt-2"
+                >
+                  <Phone className="w-5 h-5" />
+                  Agenda tu cita
+                </a>
+              </div>
+            </nav>
+          )}
+        </div>
       </header>
     </>
   );
