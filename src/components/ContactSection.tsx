@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, MessageCircle, Clock, Send, User, FileText } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, User, FileText } from "lucide-react";
+import whatsappIcon from "@/assets/logo/whatsapp.svg";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -40,7 +41,7 @@ const ContactSection = () => {
 
     // Create WhatsApp message with form data
     const message = `Hola, soy ${formData.nombre}.%0A%0ATeléfono: ${formData.telefono}%0AEmail: ${formData.email || "No proporcionado"}%0AServicio de interés: ${formData.servicio || "Consulta general"}%0A%0AMensaje: ${formData.mensaje || "Me gustaría agendar una cita."}`;
-    
+
     // Open WhatsApp with pre-filled message
     window.open(`https://wa.me/51934401465?text=${message}`, "_blank");
 
@@ -104,7 +105,7 @@ const ContactSection = () => {
               <FileText className="w-6 h-6 text-primary" />
               Solicita tu cita
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -124,7 +125,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="telefono" className="block text-sm font-medium text-foreground mb-2">
                     Teléfono / WhatsApp *
@@ -211,7 +212,7 @@ const ContactSection = () => {
             <div className="mt-6 flex items-start gap-3 p-4 bg-accent rounded-xl border border-primary/20">
               <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground">Personas mayores</span> pueden 
+                <span className="font-medium text-foreground">Personas mayores</span> pueden
                 llamar al fijo o WhatsApp para agendar su cita cómodamente. ¡Estamos aquí para ayudarles!
               </p>
             </div>
@@ -227,7 +228,7 @@ const ContactSection = () => {
               className="flex items-center gap-4 p-6 bg-primary rounded-2xl text-primary-foreground hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl group"
             >
               <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <MessageCircle className="w-7 h-7" />
+                <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8 brightness-0 invert" />
               </div>
               <div>
                 <div className="text-sm opacity-90">Contáctanos directo por</div>

@@ -1,7 +1,7 @@
 import { Calendar, Users, Award } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import fotoFamilia from "@/assets/familia/familia-completa.jpg";
+import fotoFamilia from "@/assets/familia/legado.png";
 import fotoFundadores from "@/assets/familia/fundadores.jpg";
 import fotoConsultorio from "@/assets/consultorio/consultorio.jpg";
 

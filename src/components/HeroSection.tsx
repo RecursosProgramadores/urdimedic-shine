@@ -1,5 +1,6 @@
-import { MessageCircle, Shield, Microscope, Heart } from "lucide-react";
-import heroDoctor from "@/assets/hero/hero-doctor.jpg";
+import { Shield, Microscope, Heart } from "lucide-react";
+import heroDoctor from "@/assets/hero/hero-doctor.png";
+import whatsappIcon from "@/assets/logo/whatsapp.svg";
 
 const HeroSection = () => {
   const badges = [
@@ -43,7 +44,7 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
                 className="btn-cta text-lg sm:text-xl px-8 py-4 inline-flex"
               >
-                <MessageCircle className="w-6 h-6" />
+                <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 brightness-0 invert mr-2" />
                 Agenda tu cita por WhatsApp ahora
               </a>
             </div>
@@ -79,7 +80,7 @@ const HeroSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
-              
+
               {/* Floating badge */}
               <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-xl border border-border animate-float">
                 <div className="flex items-center gap-3">

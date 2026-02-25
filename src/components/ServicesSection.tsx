@@ -1,11 +1,11 @@
 import { Eye, Scissors, ScanEye, Glasses, Stethoscope, SmilePlus } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import oftalmologiaImg from "@/assets/services/oftalmologia-general.jpg";
-import cirugiaImg from "@/assets/services/cirugia-ocular.jpg";
-import examenesImg from "@/assets/services/examenes-complementarios.jpg";
-import opticaImg from "@/assets/services/optica-integral.jpg";
-import medicinaImg from "@/assets/services/medicina-interna.jpg";
-import odontologiaImg from "@/assets/services/odontologia.jpg";
+import oftalmologiaImg from "@/assets/services/Oftalmologia.png";
+import cirugiaImg from "@/assets/services/Cirugia.png";
+import examenesImg from "@/assets/services/Complementariosexamenes.png";
+import opticaImg from "@/assets/services/opticaIntegral.png";
+import medicinaImg from "@/assets/services/MedicinaInterna.png";
+import odontologiaImg from "@/assets/services/odontologia.png";
 
 const ServicesSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
