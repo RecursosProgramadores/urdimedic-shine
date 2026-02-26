@@ -35,14 +35,14 @@ const Header = () => {
           </div>
           <span className="flex items-center gap-1.5">
             <Phone className="w-3.5 h-3.5" />
-            +51 934 401 465
+            074 - 282692
           </span>
         </div>
       </div>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
-            : "bg-transparent py-5 md:top-[34px]"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen
+          ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
+          : "bg-transparent py-5 md:top-[34px]"
           }`}
       >
         <div className="section-container">

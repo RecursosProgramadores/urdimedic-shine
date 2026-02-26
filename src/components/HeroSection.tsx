@@ -1,5 +1,7 @@
 import { Shield, Microscope, Heart } from "lucide-react";
-import heroDoctor from "@/assets/hero/hero-doctor.png";
+import home1 from "@/assets/hero/home1.png";
+import home2 from "@/assets/hero/home2.png";
+import home3 from "@/assets/hero/home3.png";
 import whatsappIcon from "@/assets/logo/whatsapp.svg";
 
 const HeroSection = () => {
@@ -68,34 +70,54 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right side - Image */}
-          <div className="order-1 lg:order-2 animate-fade-up delay-100">
-            <div className="relative">
-              {/* Main Image */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src={heroDoctor}
-                  alt="Oftalmólogo realizando examen ocular"
-                  className="w-full h-auto object-contain"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+          {/* Right side - Image Collage */}
+          <div className="order-1 lg:order-2 animate-fade-up delay-200">
+            <div className="relative max-w-[550px] mx-auto lg:ml-auto">
+              {/* Symmetrical Top Row Grid */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+                {/* Image home2 */}
+                <div className="hover:scale-105 transition-transform duration-500 cursor-pointer">
+                  <img
+                    src={home2}
+                    alt="Consultorio interior"
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
+
+                {/* Image home3 */}
+                <div className="hover:scale-105 transition-transform duration-500 cursor-pointer">
+                  <img
+                    src={home3}
+                    alt="Equipamiento oftalmológico"
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
               </div>
 
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 shadow-xl border border-border animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-lg">25+</span>
+              {/* Image home1 - Large bottom spanning */}
+              <div className="hover:scale-105 transition-transform duration-500 cursor-pointer">
+                <img
+                  src={home1}
+                  alt="Centro URDIMEDIC"
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+
+              {/* Floating experience badge - Modern styling */}
+              <div className="absolute -bottom-6 -left-4 sm:-bottom-8 sm:-left-6 bg-card/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 shadow-2xl border border-primary/20 animate-float z-20">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg transform rotate-3">
+                    <span className="text-primary-foreground font-bold text-xl">25+</span>
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-foreground">Años de</div>
-                    <div className="text-xs text-muted-foreground">experiencia</div>
+                    <div className="text-sm sm:text-base font-bold text-primary leading-none mb-1">Años de</div>
+                    <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-widest opacity-80">Excelencia</div>
                   </div>
                 </div>
               </div>
 
-              {/* Decorative circle */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary/20 rounded-full blur-xl" />
+              {/* Decorative background glow for depth */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/10 rounded-full blur-[120px] -z-10 pointer-events-none animate-pulse-slow" />
             </div>
           </div>
         </div>

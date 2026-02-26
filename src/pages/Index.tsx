@@ -7,6 +7,7 @@ import MissionVisionSection from "@/components/MissionVisionSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import PhoneButton from "@/components/PhoneButton";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       </main>
       <Footer />
       <WhatsAppButton />
+      <PhoneButton />
     </div>
   );
 };
