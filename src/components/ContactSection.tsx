@@ -71,7 +71,6 @@ const ContactSection = () => {
       icon: Phone,
       label: "Teléfonos",
       value: "074 - 282692 / +51 934 401 465",
-      href: "https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica",
     },
     {
       icon: Mail,
@@ -225,14 +224,14 @@ const ContactSection = () => {
               href="https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-6 bg-primary rounded-2xl text-primary-foreground hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="flex items-center gap-4 p-4 bg-primary rounded-2xl text-primary-foreground hover:brightness-110 transition-all duration-300 shadow-lg hover:shadow-xl group"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8 brightness-0 invert" />
+              <div className="w-12 h-12 rounded-xl bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <img src={whatsappIcon} alt="WhatsApp" className="w-6 h-6 brightness-0 invert" />
               </div>
               <div>
-                <div className="text-sm opacity-90">Contáctanos</div>
-                <div className="text-xl font-bold">074-282692 / +51 934 401 465</div>
+                <div className="text-xs opacity-90">Contáctanos</div>
+                <div className="text-lg font-bold">+51 934 401 465</div>
               </div>
             </a>
 
