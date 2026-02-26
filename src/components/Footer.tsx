@@ -70,13 +70,10 @@ const Footer = () => {
                 </span>
               </li>
               <li>
-                <a
-                  href="https://wa.me/51934401465"
-                  className="flex items-center gap-3 text-background/70 hover:text-background transition-colors"
-                >
+                <div className="flex items-center gap-3 text-background/70">
                   <Phone className="w-4 h-4 text-secondary" />
-                  <span className="text-sm">+51 934 401 465</span>
-                </a>
+                  <span className="text-sm">074 - 282692 / +51 934 401 465</span>
+                </div>
               </li>
               <li>
                 <a

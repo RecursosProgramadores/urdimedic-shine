@@ -33,10 +33,16 @@ const Header = () => {
               Lun – Sáb: 9:00 AM – 1:00 PM / 3:00 PM – 6:30 PM
             </span>
           </div>
-          <span className="flex items-center gap-1.5">
-            <Phone className="w-3.5 h-3.5" />
-            074 - 282692
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5" />
+              074 - 282692
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5" />
+              +51 934 401 465
+            </span>
+          </div>
         </div>
       </div>
       <header

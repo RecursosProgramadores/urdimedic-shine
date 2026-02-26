@@ -69,8 +69,8 @@ const ContactSection = () => {
     },
     {
       icon: Phone,
-      label: "WhatsApp",
-      value: "+51 934 401 465",
+      label: "Teléfonos",
+      value: "074 - 282692 / +51 934 401 465",
       href: "https://wa.me/51934401465?text=Hola%2C%20quiero%20reservar%20una%20cita%20oftalmológica",
     },
     {
@@ -231,8 +231,8 @@ const ContactSection = () => {
                 <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8 brightness-0 invert" />
               </div>
               <div>
-                <div className="text-sm opacity-90">Contáctanos directo por</div>
-                <div className="text-2xl font-bold">WhatsApp +51 934 401 465</div>
+                <div className="text-sm opacity-90">Contáctanos</div>
+                <div className="text-xl font-bold">074-282692 / +51 934 401 465</div>
               </div>
             </a>
 
