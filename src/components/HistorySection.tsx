@@ -10,19 +10,19 @@ const galleryImages = [
     id: 1,
     src: fotoFamilia,
     alt: "Familia Urbina Díaz",
-    caption: "La familia Urbina Díaz continúa el legado",
+    caption: "",
   },
   {
     id: 2,
     src: fotoFundadores,
     alt: "Fundadores Óptica Díaz",
-    caption: "Hermelinda y Marco Antonio - Fundadores",
+    caption: "",
   },
   {
     id: 3,
     src: fotoConsultorio,
     alt: "Consultorio URDIMEDIC",
-    caption: "Nuestras modernas instalaciones",
+    caption: "",
   },
 ];
 
@@ -53,21 +53,15 @@ const HistorySection = () => {
           {/* Text Content */}
           <div className={`transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Fundado el{" "}
-              <span className="text-primary font-semibold">21 de mayo de 1998</span>{" "}
-              en Lambayeque por{" "}
-              <span className="font-medium text-foreground">Hermelinda Díaz Herencia</span>{" "}
-              y{" "}
-              <span className="font-medium text-foreground">Marco Antonio Urbina Santamaría</span>{" "}
-              como Óptica Díaz.
+              Fundado en{" "}
+              <span className="text-primary font-semibold">1998</span>{" "}
+              en Lambayeque como Óptica Díaz, nuestra institución nació del compromiso de sus fundadores por brindar salud visual de calidad a la comunidad.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              Hoy, sus hijos{" "}
-              <span className="font-medium text-foreground">Marco, Kevin y Paola Urbina Díaz</span>{" "}
-              unifican el legado bajo{" "}
+              Hoy, el legado familiar continúa y se unifica bajo{" "}
               <span className="text-primary font-semibold">URDIMEDIC</span>,
-              combinando experiencia, tecnología moderna y calidez humana.
+              combinando más de 25 años de experiencia con tecnología moderna y una atención profundamente humana.
             </p>
 
             {/* Timeline */}
@@ -114,9 +108,11 @@ const HistorySection = () => {
                   className="w-full h-full object-cover"
                 />
               </AspectRatio>
-              <div className="p-3 bg-card">
-                <p className="text-sm text-center text-muted-foreground">{galleryImages[0].caption}</p>
-              </div>
+              {galleryImages[0].caption && (
+                <div className="p-3 bg-card">
+                  <p className="text-sm text-center text-muted-foreground">{galleryImages[0].caption}</p>
+                </div>
+              )}
             </div>
 
             {/* Secondary Photos */}
@@ -130,9 +126,11 @@ const HistorySection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </AspectRatio>
-                  <div className="p-2 bg-card">
-                    <p className="text-xs text-center text-muted-foreground">{image.caption}</p>
-                  </div>
+                  {image.caption && (
+                    <div className="p-2 bg-card">
+                      <p className="text-xs text-center text-muted-foreground">{image.caption}</p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

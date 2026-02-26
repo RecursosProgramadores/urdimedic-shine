@@ -30,7 +30,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5" />
-              Lun – Vie: 9:00 AM – 1:00 PM / 4:00 PM – 7:00 PM | Sáb: 9:00 AM – 1:00 PM
+              Lun – Sáb: 9:00 AM – 1:00 PM / 3:00 PM – 6:30 PM
             </span>
           </div>
           <span className="flex items-center gap-1.5">

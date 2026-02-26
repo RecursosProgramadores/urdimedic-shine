@@ -82,8 +82,8 @@ const ContactSection = () => {
     {
       icon: Clock,
       label: "Horarios de atención",
-      value: "Lun – Vie: 9:00 AM – 1:00 PM / 4:00 PM – 7:00 PM",
-      subvalue: "Sáb: 9:00 AM – 1:00 PM | Dom: Cerrado",
+      value: "Lun – Sáb: 9:00 AM – 1:00 PM / 3:00 PM – 6:30 PM",
+      subvalue: "Dom: Cerrado",
     },
   ];
 

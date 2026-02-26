@@ -76,7 +76,7 @@ const HeroSection = () => {
                 <img
                   src={heroDoctor}
                   alt="Oftalmólogo realizando examen ocular"
-                  className="w-full h-auto object-cover aspect-square"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
