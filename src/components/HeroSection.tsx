@@ -53,7 +53,7 @@ const HeroSection = () => {
 
             {/* Secondary text */}
             <p className="animate-fade-up delay-300 text-sm text-muted-foreground mb-8">
-              Llamadas a fijo o WhatsApp para adultos mayores. ¡Atención personalizada!
+              Llamadas a fijo o WhatsApp. ¡Atención personalizada!
             </p>
 
             {/* Badges */}
